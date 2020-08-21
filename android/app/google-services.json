@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "108694277547",
+    "firebase_url": "https://flutter-study-duolingo.firebaseio.com",
+    "project_id": "flutter-study-duolingo",
+    "storage_bucket": "flutter-study-duolingo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108694277547:android:9aa8f156b5ca033ef856ee",
+        "android_client_info": {
+          "package_name": "com.example.learntech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108694277547-52rm2dh3g018suaduq1aerd0ku8bcu53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxRONhjkhfj9HJSygrW5zstVHVDZqJoqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108694277547-52rm2dh3g018suaduq1aerd0ku8bcu53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

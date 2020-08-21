@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:learntech/models/questcategory.dart';
 import 'package:mobx/mobx.dart';
 
@@ -27,17 +28,19 @@ abstract class _QuestCategoryStore with Store {
 
   @action
   Future<void> _loadQuestCategories() async {
-    final entities = [
-      QuestCategory(description: "Dart"),
-      QuestCategory(description: "Rust"),
-      QuestCategory(description: "VB"),
-      QuestCategory(description: "Java"),
-      QuestCategory(description: "JS"),
-      QuestCategory(description: "Typescript"),
-      QuestCategory(description: "Database"),
-    ];
+    questCategories.clear();
 
-    questCategories.addAll(entities.toList());
+    try {
+      CollectionReference categories = FirebaseFirestore.instance.collection('categories');
+      QuerySnapshot snapshot = await categories.get();
+
+      if (snapshot.docs.isNotEmpty) {
+        snapshot.docs.forEach((doc) => questCategories.add(QuestCategory(id: doc.id, description: doc.data()["description"])));
+      }
+    }
+    catch(e) {
+      print("error fetching data: $e");
+    }
   }
 
   Future<void> init() async {
